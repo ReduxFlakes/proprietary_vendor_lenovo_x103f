@@ -15,4 +15,13 @@
 # Pick up overlay for features that depend on non-open-source files
 DEVICE_PACKAGE_OVERLAYS += vendor/lenovo/x103f/overlay
 
+# Dolby DS2 framework jars (required by the Ds2/Ds2UI apps)
+PRODUCT_COPY_FILES += \
+    vendor/lenovo/x103f/proprietary/framework/dolby_ds2.jar:system/framework/dolby_ds2.jar \
+    vendor/lenovo/x103f/proprietary/framework/dolby_ds1.jar:system/framework/dolby_ds1.jar
+
+PRODUCT_BOOT_JARS += \
+    dolby_ds2 \
+    dolby_ds1
+
 $(call inherit-product, vendor/lenovo/x103f/x103f-vendor-blobs.mk)
